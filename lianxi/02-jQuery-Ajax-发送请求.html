@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	console.log(jQuery === $)
+	
+	var url = "my.json";
+	//函数的参数接受数据
+	jQuery.get(url,function(data){
+		console.log(data)
+		
+		document.body.innerHTML = JSON.stringify(data)
+		
+	})
+	
+	
+//	$.ajax({
+//		
+//	})
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+
+
+	//1. 创建异步请求对象
+	var ajax = new XMLHttpRequest();
+	//2. 设置请求的方法和请求的路径
+	var url = 'my.json';
+	ajax.open('get', url);
+	//3. 发送请求
+	ajax.send();
+	//4. 注册事件
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState === 4 && ajax.status === 200) {
+			
+			//5. 获取返回的数据并使用
+			console.log(ajax.responseText);
+			document.body.innerHTML = ajax.responseText;
+
+		}
+	}
+</script>
+<!--
+	1 请求的方法
+	
+	2. 请求的路径
+	
+	3  请求发送之后   要得到数据
+	
+	
+	
+-->

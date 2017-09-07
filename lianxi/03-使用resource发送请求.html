@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入js-->
+
+		<script src="js/vue.js"></script>
+		<script src="js/vue-router.js"></script>
+		<script src="js/axios.js"></script>
+		<script src="js/vue-resource.min.js"></script>
+
+	</head>
+
+	<body>
+		<!--视图-->
+		<div id="app">
+
+			{{message}}
+		</div>
+	</body>
+
+</html>
+<script>
+	//数据
+	var dataModel = {
+			message: "hello vue!"
+		}
+		//关联
+	var vm = new Vue({
+		el: '#app',
+		data: dataModel,
+		created: function() {
+
+			//设置请求的路径
+			var url = "my.json";
+
+			//提前保存this指针,是因为要在then方法的回调函数中使用this
+			var tThis = this;
+
+			//通过  axios发送请求   之后   要得到数据    通过函数的参数得到请求的数据
+			this.$http.get(url).then(function(res) {
+				console.log(res.data)
+
+			})
+		}
+	})
+</script>

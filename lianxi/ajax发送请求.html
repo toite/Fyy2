@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var ajax = new XMLHttpRequest();
+	
+	var url = 'my.json';
+	
+	ajax.open('get',url);
+	
+	ajax.send();
+	
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState === 4 && ajax.status === 200) {
+			console.log(ajax.responseText);
+			document.body.innerHTML = ajax.responseText;
+		}
+	}
+</script>
